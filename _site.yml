@@ -1,4 +1,4 @@
-name: "lab-wiki"
+name: "reprex"
 output_dir: "_site"
 author: Isaac T. Petersen
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
@@ -20,46 +20,4 @@ output:
       - "includes/footer.html"
 new_session: true
 navbar:
-  title: "Lab Wiki for the Developmental Psychopathology Lab"
-  left:
-    - text: "Lab Manual"
-      href: manual.html
-    - text: "Expectations"
-      menu:
-      - text: Everyone
-        href: expectations-everyone.html
-      - text: Undergraduate Research Assistants
-        href: expectations-undergradRA.html
-      - text: SROP Students
-        href: expectations-SROP.html
-      - text: Graduate Students
-        href: expectations-gradStudent.html
-      #- text: Postdoctoral Scholars
-      #  href: expectations-postdoc.html
-      - text: Lab Coordinator
-        href: expectations-labCoordinator.html
-      - text: Lab Staff
-        href: expectations-labStaff.html
-    - text: "Documentation"
-      menu:
-      - text: Data Analysis Guides
-        href: analysis.html
-      - text: Honors Projects
-        href: honors.html
-      - text: Remote Participation
-        href: documentation-remote.html
-    - text: "Studies"
-      menu:
-      - text: School Readiness Study
-        href: study-schoolReadinessStudy.html
-    - text: "Prospective Applicants"
-      menu:
-      - text: Prospective Undergraduate Research Assistants
-        href: prospective-undergradRA.html
-      - text: Prospective Graduate Students
-        href: prospective-gradStudent.html
-    - text: "About"
-      href: about.html
-  right:
-    - text: "Lab Website"
-      href: https://developmental-psychopathology.lab.uiowa.edu
+  title: "Reproducible Example"
