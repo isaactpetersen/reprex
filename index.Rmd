@@ -1,50 +1,90 @@
 ---
-title: "Lab Wiki for the Developmental Psychopathology Lab"
+title: "Reproducible Example"
+output: 
+  html_document:
+    code_folding: show
+    number_sections: true
+    df_print: paged
 ---
 
-```{r setup, include = FALSE}
+```{r setup}
 knitr::opts_chunk$set(echo = TRUE,
                       error = TRUE)
 ```
 
-<Ins>Lab Contacts</ins>
+# Methods
 
-**Principal Investigator**\
-[Dr. Isaac Petersen, Ph.D.](https://psychology.uiowa.edu/people/isaac-petersen)\
-Office: 175 Psychological and Brain Sciences Building (PBSB)\
-Email: isaac-t-petersen@uiowa.edu
+```{r}
+methods("describe")
+```
 
-**Lab Coordinator**\
-[Benjamin Swanson, B.A.](https://developmental-psychopathology.lab.uiowa.edu/people/benjamin-swanson)\
-Office: 111 Spence Labs (SLP)\
-Lab Email (preferred for lab-relevant communication): devpsy-lab@uiowa.edu\
-Personal Email: benjamin-m-swanson@uiowa.edu
+# Load Libraries
 
-**Lab Staff**\
-Laxmi Annapureddy\
-Office: 119 Spence Labs (SLP)\
-Email: laxmi-annapureddy@uiowa.edu
+```{r}
+library("Hmisc", exclude = c("describe")) 
+library("psych")
+```
 
-**Graduate Students**\
-[Jordan Harris, B.S.](https://developmental-psychopathology.lab.uiowa.edu/people/jordan-harris)\
-Office: 109 Spence Labs (SLP)\
-Email: jordan-l-harris@uiowa.edu
+# Simulate Data
 
-[Alexis Hosch, B.S.](https://developmental-psychopathology.lab.uiowa.edu/people/alexis-hosch)\
-Office: 109 Spence Labs (SLP)\
-Email: alexis-hosch@uiowa.edu
+```{r}
+set.seed(52242)
 
-**Location**:
+n <- 1000
 
-Developmental Psychopathology Lab\
-Spence Labs 109–119\
-308 East Iowa Avenue\
-University of Iowa\
-Iowa City, IA 52242
+ID <- rep(1:100, each = 10)
+predictor <- rbeta(n, 1.5, 5) * 100
+outcome <- predictor + rnorm(n, mean = 0, sd = 20) + 50
 
-**Website**: [https://psychology.uiowa.edu/developmental-psychopathology-lab](https://psychology.uiowa.edu/developmental-psychopathology-lab)\
-**Social Media**:
+df <- data.frame(ID = ID,
+                 predictor = predictor,
+                 outcome = outcome)
+```
 
-- Facebook: https://www.facebook.com/DevPsyLab
-- Twitter: https://twitter.com/devpsylab
-- Instagram: https://instagram.com/dev_psy_lab
+# Session Info
+
+`Hmisc` is loaded:
+
+```{r}
+sessionInfo()
+```
+
+# Methods
+
+```{r}
+methods("describe")
+```
+
+# Unload `Hmisc`
+
+```{r}
+unloadNamespace("Hmisc")
+```
+
+# Session Info
+
+`Hmisc` is unloaded:
+
+```{r}
+sessionInfo()
+```
+
+# Methods
+
+```{r}
+methods("describe")
+```
+
+# Use `psych::describe()`
+
+Throws error:
+
+```{r}
+psych::describe(df)
+```
+
+# Session Info
+
+```{r}
+sessionInfo()
+```
