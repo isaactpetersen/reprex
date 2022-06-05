@@ -11,12 +11,12 @@
 
 
 
-<title>Lab Wiki for the Developmental Psychopathology Lab</title>
+<title>Reproducible Example</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -29,25 +29,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
-<script src="site_libs/navigation-1.1/sourceembed.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8JSDTYMH7P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8JSDTYMH7P');
-</script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -72,15 +59,8 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-#rmd-source-code {
-  display: none;
-}
-</style>
 
 
-<link rel="stylesheet" href="includes/custom.css" type="text/css" />
-<link rel="stylesheet" href="font/css/roboto.css" type="text/css" />
 
 
 
@@ -114,76 +94,6 @@ pre code {
 </style>
 
 
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
 
 <!-- tabsets -->
 
@@ -248,69 +158,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -320,38 +167,7 @@ div.tocify {
 <div class="container-fluid main-container">
 
 
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
 
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
-
-
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Reproducible Example</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
 
 <div id="header">
 
@@ -360,72 +176,228 @@ div.tocify {
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
-<li role="separator" class="divider"></li>
-<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
 </ul>
 </div>
 
 
 
-<h1 class="title toc-ignore">Lab Wiki for the Developmental Psychopathology Lab</h1>
+<h1 class="title toc-ignore">Reproducible Example</h1>
 
 </div>
 
 
-<Ins>
-Lab Contacts
-</ins>
-<p><strong>Principal Investigator</strong><br />
-<a href="https://psychology.uiowa.edu/people/isaac-petersen">Dr. Isaac Petersen, Ph.D.</a><br />
-Office: 175 Psychological and Brain Sciences Building (PBSB)<br />
-Email: <a href="mailto:isaac-t-petersen@uiowa.edu" class="email">isaac-t-petersen@uiowa.edu</a></p>
-<p><strong>Lab Coordinator</strong><br />
-<a href="https://developmental-psychopathology.lab.uiowa.edu/people/benjamin-swanson">Benjamin Swanson, B.A.</a><br />
-Office: 111 Spence Labs (SLP)<br />
-Lab Email (preferred for lab-relevant communication): <a href="mailto:devpsy-lab@uiowa.edu" class="email">devpsy-lab@uiowa.edu</a><br />
-Personal Email: <a href="mailto:benjamin-m-swanson@uiowa.edu" class="email">benjamin-m-swanson@uiowa.edu</a></p>
-<p><strong>Lab Staff</strong><br />
-Laxmi Annapureddy<br />
-Office: 119 Spence Labs (SLP)<br />
-Email: <a href="mailto:laxmi-annapureddy@uiowa.edu" class="email">laxmi-annapureddy@uiowa.edu</a></p>
-<p><strong>Graduate Students</strong><br />
-<a href="https://developmental-psychopathology.lab.uiowa.edu/people/jordan-harris">Jordan Harris, B.S.</a><br />
-Office: 109 Spence Labs (SLP)<br />
-Email: <a href="mailto:jordan-l-harris@uiowa.edu" class="email">jordan-l-harris@uiowa.edu</a></p>
-<p><a href="https://developmental-psychopathology.lab.uiowa.edu/people/alexis-hosch">Alexis Hosch, B.S.</a><br />
-Office: 109 Spence Labs (SLP)<br />
-Email: <a href="mailto:alexis-hosch@uiowa.edu" class="email">alexis-hosch@uiowa.edu</a></p>
-<p><strong>Location</strong>:</p>
-<p>Developmental Psychopathology Lab<br />
-Spence Labs 109–119<br />
-308 East Iowa Avenue<br />
-University of Iowa<br />
-Iowa City, IA 52242</p>
-<p><strong>Website</strong>: <a href="https://psychology.uiowa.edu/developmental-psychopathology-lab">https://psychology.uiowa.edu/developmental-psychopathology-lab</a><br />
-<strong>Social Media</strong>:</p>
-<ul>
-<li>Facebook: <a href="https://www.facebook.com/DevPsyLab" class="uri">https://www.facebook.com/DevPsyLab</a></li>
-<li>Twitter: <a href="https://twitter.com/devpsylab" class="uri">https://twitter.com/devpsylab</a></li>
-<li>Instagram: <a href="https://instagram.com/dev_psy_lab" class="uri">https://instagram.com/dev_psy_lab</a></li>
-</ul>
-
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTGFiIFdpa2kgZm9yIHRoZSBEZXZlbG9wbWVudGFsIFBzeWNob3BhdGhvbG9neSBMYWIiCi0tLQoKYGBge3Igc2V0dXAsIGluY2x1ZGUgPSBGQUxTRX0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFLAogICAgICAgICAgICAgICAgICAgICAgZXJyb3IgPSBUUlVFKQpgYGAKCjxJbnM+TGFiIENvbnRhY3RzPC9pbnM+CgoqKlByaW5jaXBhbCBJbnZlc3RpZ2F0b3IqKlwKW0RyLiBJc2FhYyBQZXRlcnNlbiwgUGguRC5dKGh0dHBzOi8vcHN5Y2hvbG9neS51aW93YS5lZHUvcGVvcGxlL2lzYWFjLXBldGVyc2VuKVwKT2ZmaWNlOiAxNzUgUHN5Y2hvbG9naWNhbCBhbmQgQnJhaW4gU2NpZW5jZXMgQnVpbGRpbmcgKFBCU0IpXApFbWFpbDogaXNhYWMtdC1wZXRlcnNlbkB1aW93YS5lZHUKCioqTGFiIENvb3JkaW5hdG9yKipcCltCZW5qYW1pbiBTd2Fuc29uLCBCLkEuXShodHRwczovL2RldmVsb3BtZW50YWwtcHN5Y2hvcGF0aG9sb2d5LmxhYi51aW93YS5lZHUvcGVvcGxlL2JlbmphbWluLXN3YW5zb24pXApPZmZpY2U6IDExMSBTcGVuY2UgTGFicyAoU0xQKVwKTGFiIEVtYWlsIChwcmVmZXJyZWQgZm9yIGxhYi1yZWxldmFudCBjb21tdW5pY2F0aW9uKTogZGV2cHN5LWxhYkB1aW93YS5lZHVcClBlcnNvbmFsIEVtYWlsOiBiZW5qYW1pbi1tLXN3YW5zb25AdWlvd2EuZWR1CgoqKkxhYiBTdGFmZioqXApMYXhtaSBBbm5hcHVyZWRkeVwKT2ZmaWNlOiAxMTkgU3BlbmNlIExhYnMgKFNMUClcCkVtYWlsOiBsYXhtaS1hbm5hcHVyZWRkeUB1aW93YS5lZHUKCioqR3JhZHVhdGUgU3R1ZGVudHMqKlwKW0pvcmRhbiBIYXJyaXMsIEIuUy5dKGh0dHBzOi8vZGV2ZWxvcG1lbnRhbC1wc3ljaG9wYXRob2xvZ3kubGFiLnVpb3dhLmVkdS9wZW9wbGUvam9yZGFuLWhhcnJpcylcCk9mZmljZTogMTA5IFNwZW5jZSBMYWJzIChTTFApXApFbWFpbDogam9yZGFuLWwtaGFycmlzQHVpb3dhLmVkdQoKW0FsZXhpcyBIb3NjaCwgQi5TLl0oaHR0cHM6Ly9kZXZlbG9wbWVudGFsLXBzeWNob3BhdGhvbG9neS5sYWIudWlvd2EuZWR1L3Blb3BsZS9hbGV4aXMtaG9zY2gpXApPZmZpY2U6IDEwOSBTcGVuY2UgTGFicyAoU0xQKVwKRW1haWw6IGFsZXhpcy1ob3NjaEB1aW93YS5lZHUKCioqTG9jYXRpb24qKjoKCkRldmVsb3BtZW50YWwgUHN5Y2hvcGF0aG9sb2d5IExhYlwKU3BlbmNlIExhYnMgMTA54oCTMTE5XAozMDggRWFzdCBJb3dhIEF2ZW51ZVwKVW5pdmVyc2l0eSBvZiBJb3dhXApJb3dhIENpdHksIElBIDUyMjQyCgoqKldlYnNpdGUqKjogW2h0dHBzOi8vcHN5Y2hvbG9neS51aW93YS5lZHUvZGV2ZWxvcG1lbnRhbC1wc3ljaG9wYXRob2xvZ3ktbGFiXShodHRwczovL3BzeWNob2xvZ3kudWlvd2EuZWR1L2RldmVsb3BtZW50YWwtcHN5Y2hvcGF0aG9sb2d5LWxhYilcCioqU29jaWFsIE1lZGlhKio6CgotIEZhY2Vib29rOiBodHRwczovL3d3dy5mYWNlYm9vay5jb20vRGV2UHN5TGFiCi0gVHdpdHRlcjogaHR0cHM6Ly90d2l0dGVyLmNvbS9kZXZwc3lsYWIKLSBJbnN0YWdyYW06IGh0dHBzOi8vaW5zdGFncmFtLmNvbS9kZXZfcHN5X2xhYgo=</div>
-<script type="text/javascript" src="includes/external-links.js"></script>
-
-<!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<!-- Add font awesome icons -->
-<p style="text-align: center;">
-    <a href="https://github.com/DevPsyLab" target="_blank" class="fa fa-github fa-fw fa-3x"></a>
-    <a href="https://twitter.com/devpsylab" target="_blank" class="fa fa-twitter fa-fw fa-3x"></a>
-    <a href="https://www.facebook.com/DevPsyLab" target="_blank" class="fa fa-facebook fa-fw fa-3x"></a>
-	<a href="https://www.instagram.com/dev_psy_lab" target="_blank" class="fa fa-instagram fa-fw fa-3x"></a>
-</p>
-
-
+<pre class="r"><code>knitr::opts_chunk$set(echo = TRUE,
+                      error = TRUE)</code></pre>
+<div id="methods" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Methods</h1>
+<pre class="r"><code>methods(&quot;describe&quot;)</code></pre>
+<pre><code>## Error in .S3methods(generic.function, class, envir): no function &#39;describe&#39; is visible</code></pre>
 </div>
+<div id="load-libraries" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Load Libraries</h1>
+<pre class="r"><code>library(&quot;Hmisc&quot;, exclude = c(&quot;describe&quot;)) </code></pre>
+<pre><code>## Loading required package: lattice</code></pre>
+<pre><code>## Loading required package: survival</code></pre>
+<pre><code>## Loading required package: Formula</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre><code>## 
+## Attaching package: &#39;Hmisc&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     format.pval, units</code></pre>
+<pre class="r"><code>library(&quot;psych&quot;)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;psych&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:ggplot2&#39;:
+## 
+##     %+%, alpha</code></pre>
 </div>
+<div id="simulate-data" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Simulate Data</h1>
+<pre class="r"><code>set.seed(52242)
+
+n &lt;- 1000
+
+ID &lt;- rep(1:100, each = 10)
+predictor &lt;- rbeta(n, 1.5, 5) * 100
+outcome &lt;- predictor + rnorm(n, mean = 0, sd = 20) + 50
+
+df &lt;- data.frame(ID = ID,
+                 predictor = predictor,
+                 outcome = outcome)</code></pre>
+</div>
+<div id="session-info" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Session Info</h1>
+<p><code>Hmisc</code> is loaded:</p>
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>## R version 4.2.0 (2022-04-22)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 20.04.4 LTS
+## 
+## Matrix products: default
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+## 
+## locale:
+##  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+##  [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+##  [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+## [10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] psych_2.2.5     Hmisc_4.7-0     ggplot2_3.3.6   Formula_1.2-4  
+## [5] survival_3.3-1  lattice_0.20-45
+## 
+## loaded via a namespace (and not attached):
+##  [1] tidyselect_1.1.2    xfun_0.31           bslib_0.3.1        
+##  [4] purrr_0.3.4         splines_4.2.0       colorspace_2.0-3   
+##  [7] vctrs_0.4.1         generics_0.1.2      htmltools_0.5.2    
+## [10] yaml_2.3.5          base64enc_0.1-3     utf8_1.2.2         
+## [13] rlang_1.0.2         jquerylib_0.1.4     pillar_1.7.0       
+## [16] foreign_0.8-82      glue_1.6.2          withr_2.5.0        
+## [19] RColorBrewer_1.1-3  jpeg_0.1-9          lifecycle_1.0.1    
+## [22] stringr_1.4.0       munsell_0.5.0       gtable_0.3.0       
+## [25] htmlwidgets_1.5.4   evaluate_0.15       latticeExtra_0.6-29
+## [28] knitr_1.39          fastmap_1.1.0       parallel_4.2.0     
+## [31] fansi_1.0.3         htmlTable_2.4.0     backports_1.4.1    
+## [34] checkmate_2.1.0     scales_1.2.0        jsonlite_1.8.0     
+## [37] tmvnsim_1.0-2       gridExtra_2.3       mnormt_2.0.2       
+## [40] png_0.1-7           digest_0.6.29       stringi_1.7.6      
+## [43] dplyr_1.0.9         grid_4.2.0          cli_3.3.0          
+## [46] tools_4.2.0         magrittr_2.0.3      sass_0.4.1         
+## [49] tibble_3.1.7        cluster_2.1.3       crayon_1.5.1       
+## [52] pkgconfig_2.0.3     ellipsis_0.3.2      Matrix_1.4-1       
+## [55] data.table_1.14.2   rstudioapi_0.13     rmarkdown_2.14     
+## [58] rpart_4.1.16        R6_2.5.1            nlme_3.1-157       
+## [61] nnet_7.3-17         compiler_4.2.0</code></pre>
+</div>
+<div id="methods-1" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Methods</h1>
+<pre class="r"><code>methods(&quot;describe&quot;)</code></pre>
+<pre><code>## Warning in .S3methods(generic.function, class, envir): function &#39;describe&#39;
+## appears not to be S3 generic; found functions that look like S3 methods</code></pre>
+<pre><code>## [1] describe.by
+## see &#39;?methods&#39; for accessing help and source code</code></pre>
+</div>
+<div id="unload-hmisc" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Unload <code>Hmisc</code></h1>
+<pre class="r"><code>unloadNamespace(&quot;Hmisc&quot;)</code></pre>
+</div>
+<div id="session-info-1" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Session Info</h1>
+<p><code>Hmisc</code> is unloaded:</p>
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>## R version 4.2.0 (2022-04-22)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 20.04.4 LTS
+## 
+## Matrix products: default
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+## 
+## locale:
+##  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+##  [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+##  [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+## [10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] psych_2.2.5     ggplot2_3.3.6   Formula_1.2-4   survival_3.3-1 
+## [5] lattice_0.20-45
+## 
+## loaded via a namespace (and not attached):
+##  [1] tidyselect_1.1.2    xfun_0.31           bslib_0.3.1        
+##  [4] purrr_0.3.4         splines_4.2.0       colorspace_2.0-3   
+##  [7] vctrs_0.4.1         generics_0.1.2      htmltools_0.5.2    
+## [10] yaml_2.3.5          base64enc_0.1-3     utf8_1.2.2         
+## [13] rlang_1.0.2         jquerylib_0.1.4     pillar_1.7.0       
+## [16] foreign_0.8-82      glue_1.6.2          withr_2.5.0        
+## [19] RColorBrewer_1.1-3  jpeg_0.1-9          lifecycle_1.0.1    
+## [22] stringr_1.4.0       munsell_0.5.0       gtable_0.3.0       
+## [25] htmlwidgets_1.5.4   evaluate_0.15       latticeExtra_0.6-29
+## [28] knitr_1.39          fastmap_1.1.0       parallel_4.2.0     
+## [31] fansi_1.0.3         htmlTable_2.4.0     backports_1.4.1    
+## [34] checkmate_2.1.0     scales_1.2.0        jsonlite_1.8.0     
+## [37] tmvnsim_1.0-2       gridExtra_2.3       mnormt_2.0.2       
+## [40] png_0.1-7           digest_0.6.29       stringi_1.7.6      
+## [43] dplyr_1.0.9         grid_4.2.0          cli_3.3.0          
+## [46] tools_4.2.0         magrittr_2.0.3      sass_0.4.1         
+## [49] tibble_3.1.7        cluster_2.1.3       crayon_1.5.1       
+## [52] pkgconfig_2.0.3     ellipsis_0.3.2      Matrix_1.4-1       
+## [55] data.table_1.14.2   rstudioapi_0.13     rmarkdown_2.14     
+## [58] rpart_4.1.16        R6_2.5.1            nlme_3.1-157       
+## [61] nnet_7.3-17         compiler_4.2.0</code></pre>
+</div>
+<div id="methods-2" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Methods</h1>
+<pre class="r"><code>methods(&quot;describe&quot;)</code></pre>
+<pre><code>## Warning in .S3methods(generic.function, class, envir): function &#39;describe&#39;
+## appears not to be S3 generic; found functions that look like S3 methods</code></pre>
+<pre><code>## [1] describe.by
+## see &#39;?methods&#39; for accessing help and source code</code></pre>
+</div>
+<div id="use-psychdescribe" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Use <code>psych::describe()</code></h1>
+<p>Throws error:</p>
+<pre class="r"><code>psych::describe(df)</code></pre>
+<pre><code>## Error in as.data.frame.default(utils::head(x, maxPrint)): cannot coerce class &#39;&quot;describe&quot;&#39; to a data.frame</code></pre>
+</div>
+<div id="session-info-2" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Session Info</h1>
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>## R version 4.2.0 (2022-04-22)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 20.04.4 LTS
+## 
+## Matrix products: default
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+## 
+## locale:
+##  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+##  [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+##  [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+## [10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] psych_2.2.5     ggplot2_3.3.6   Formula_1.2-4   survival_3.3-1 
+## [5] lattice_0.20-45
+## 
+## loaded via a namespace (and not attached):
+##  [1] png_0.1-7           digest_0.6.29       utf8_1.2.2         
+##  [4] R6_2.5.1            backports_1.4.1     evaluate_0.15      
+##  [7] pillar_1.7.0        rlang_1.0.2         rstudioapi_0.13    
+## [10] data.table_1.14.2   jquerylib_0.1.4     rpart_4.1.16       
+## [13] Matrix_1.4-1        checkmate_2.1.0     rmarkdown_2.14     
+## [16] splines_4.2.0       stringr_1.4.0       foreign_0.8-82     
+## [19] htmlwidgets_1.5.4   munsell_0.5.0       compiler_4.2.0     
+## [22] xfun_0.31           pkgconfig_2.0.3     base64enc_0.1-3    
+## [25] mnormt_2.0.2        tmvnsim_1.0-2       htmltools_0.5.2    
+## [28] nnet_7.3-17         tidyselect_1.1.2    tibble_3.1.7       
+## [31] gridExtra_2.3       htmlTable_2.4.0     Hmisc_4.7-0        
+## [34] fansi_1.0.3         crayon_1.5.1        dplyr_1.0.9        
+## [37] withr_2.5.0         grid_4.2.0          nlme_3.1-157       
+## [40] jsonlite_1.8.0      gtable_0.3.0        lifecycle_1.0.1    
+## [43] magrittr_2.0.3      scales_1.2.0        cli_3.3.0          
+## [46] stringi_1.7.6       latticeExtra_0.6-29 bslib_0.3.1        
+## [49] ellipsis_0.3.2      generics_0.1.2      vctrs_0.4.1        
+## [52] RColorBrewer_1.1-3  tools_4.2.0         glue_1.6.2         
+## [55] purrr_0.3.4         jpeg_0.1-9          parallel_4.2.0     
+## [58] fastmap_1.1.0       yaml_2.3.5          colorspace_2.0-3   
+## [61] cluster_2.1.3       knitr_1.39          sass_0.4.1</code></pre>
+</div>
+
+
+
 
 </div>
 
@@ -459,40 +431,10 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("index.Rmd");
-  window.initializeCodeFolding("hide" === "show");
+  window.initializeCodeFolding("show" === "show");
 });
 </script>
 
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
